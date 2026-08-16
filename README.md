@@ -1,5 +1,6 @@
 README.md (place at project root)
 markdown
+
 # Realtime Chat
 
 A full-stack real-time chat application with authentication, built with React, Express, Socket.io, and PostgreSQL (via Supabase).
@@ -7,12 +8,14 @@ A full-stack real-time chat application with authentication, built with React, E
 ## Tech Stack
 
 **Client**
+
 - React 18
 - Webpack 5 (custom config, no CRA)
 - Socket.io Client
 - Axios
 
 **Server**
+
 - Node.js + Express
 - Socket.io
 - PostgreSQL (Supabase)
@@ -41,7 +44,6 @@ socket/ # Socket.io connection + chat logic
 middleware/ # JWT verification
 db/ # Database connection + schema
 
-
 ## Setup
 
 ### 1. Database (Supabase)
@@ -65,7 +67,6 @@ DATABASE_URL=your_supabase_connection_string
 JWT_SECRET=any_long_random_string
 CLIENT_ORIGIN=http://localhost:8080
 
-
 Start the server:
 
 ```bash
@@ -86,4 +87,4 @@ Open [http://localhost:8080](http://localhost:8080).
 
 - `client` and `server` are independent Node projects — install and run each separately (two terminal windows).
 - Never commit `.env` — it contains your database credentials and JWT secret. It's already covered by the root `.gitignore`.
-To apply it
+  To apply it
