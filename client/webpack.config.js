@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.js",
@@ -25,7 +26,13 @@ module.exports = {
     ],
   },
   resolve: { extensions: [".js", ".jsx"] },
-  plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: "./public/index.html" }),
+    new webpack.DefinePlugin({
+      "process.env.SOCKET_URL": JSON.stringify(process.env.SOCKET_URL || ""),
+      "process.env.API_URL": JSON.stringify(process.env.API_URL || ""),
+    }),
+  ],
   devServer: {
     port: 8080,
     historyApiFallback: true,
